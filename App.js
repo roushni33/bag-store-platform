@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const cookieparser = require('cookie-parser');
-const session = require('express-session')
 const path = require("path");
 const db = require("./config/database-connection");
 const productRoutes = require('./routes/productRoutes')
@@ -10,6 +9,9 @@ const ownerRoutes = require('./routes/ownerRoutes');
 const indexRoutes = require('./routes/indexRoutes')
 const flash = require('connect-flash');
 require("dotenv").config();
+
+
+const session = require('express-session')
 
 app.use(express.json());
 app.use(session(
